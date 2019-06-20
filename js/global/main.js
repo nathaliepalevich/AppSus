@@ -1,13 +1,12 @@
-import theRoutes from '../routes.js'
+'use strict'
+import appHeader from './global.cmps/app-header.cmp.js'
 
+import theRoutes from './routes.js'
 const myRouter = new VueRouter({ routes: theRoutes })
 
 var app = new Vue({
-    name: 'global-main',
+    name: 'main',
     el: '#app',
-    created() {
-        console.log('App has been Created!')
-    },
     template: `
     <div>
         <app-header></app-header>
@@ -16,12 +15,16 @@ var app = new Vue({
     </div>
     `,
     components: {
-        appHeader
+        appHeader,
     },
     methods: {
-        foo(){
+        foo() {
             console.log('Got Here')
         }
     },
+    created() {
+        console.log('App has been Created!')
+    },
     router: myRouter
+    
 })
