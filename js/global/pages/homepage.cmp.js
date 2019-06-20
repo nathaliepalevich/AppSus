@@ -4,7 +4,7 @@ export default {
     template: `
     <section class="homepage">
     <h1>Welcome To AppSUS</h1>
-    <h2>I am the homepagess</h2>
+    <h2>I am the homepage</h2>
     </section>
     `
 }
