@@ -6,10 +6,10 @@ import serviceUtil from '../../global/service.util.js'
 export default {
     name: 'mail-list',
     template: `
-    <section>
+    <section class="mail-list">
     <h1>Mail List</h1>
 
-    <mail-preview v-for="mail in mails"
+    <mail-preview @click="" class="flex" v-for="mail in mails"
     :key="mail.id"
     :mail="mail"></mail-preview>
 
