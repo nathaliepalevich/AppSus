@@ -1,0 +1,50 @@
+/* Helpers */
+html{
+    font-family: Roboto;
+}
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+/* Apps Header */
+
+.app-header {
+    background: rgb(255, 164, 164);
+}
+
+.app-header .main-logo {
+    color: black;
+    margin-left: 1.875rem;
+}
+
+.main-navbar {
+    margin-right: 1.875rem;
+}
+
+.main-navbar {
+    margin-right: 1.875rem;
+}
+
+.main-navbar  {
+    margin-right: 1.875rem;
+}
+.main-navbar a{
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+
+}
+.main-navbar a:visited  {
+    margin-right: 1.875rem;
+    color: black;
+    font-weight: bold;
+}

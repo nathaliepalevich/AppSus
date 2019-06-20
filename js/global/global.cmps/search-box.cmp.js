@@ -3,8 +3,9 @@
 export default {
     name: 'search-box',
     template: `
-        <div class="search-box">
-    <span>Search</span> <input type="text">
+        <div class="search-box"> 
+    <span>Search:</span> <input type="text" placeholder="Search">
+    </div>
     </div>
     `
 }
