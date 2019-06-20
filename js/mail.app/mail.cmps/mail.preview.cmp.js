@@ -1,15 +1,23 @@
 export  default { 
+    name: 'mail-preview',
     props: ['mail'],
     template: `
-            <li>
-                <h6>{{mail.subject}}</h6>
-                <h6>{{mail.body}}</h6>
+
+            <div class="mail-preview">
+                <h6>{{mail}}</h6>
+                <!-- <h6>{{mail.body}}</h6> -->
                 <!-- <router-link :to="bookURL" >Check it out!</router-link> -->
-        </li>
+</div>
     `,
     created() {
         console.log('got to mail preview')
+        
     },
+    // data() {
+    //     return {
+    //         mail: null
+    //     }
+    // },
    computed: {
        bookURL(){
            return '/book/' + this.book.id

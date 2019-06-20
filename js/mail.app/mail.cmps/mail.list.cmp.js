@@ -8,15 +8,14 @@ export default {
     template: `
     <section>
     <h1>Mail List</h1>
-    <div class="mail-container">
-    <mail-preview    
-    v-for="(currentMail, idx) in mails"
-    :key="idx"
-    :mail="currentMail"></mail-preview>
-    </div>
+
+    <mail-preview v-for="mail in mails"
+    :key="mail.id"
+    :mail="mail"></mail-preview>
+
     </section>   
     `,
-    component: {
+    components: {
         mailPreview
     },
     data() {
