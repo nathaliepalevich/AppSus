@@ -5,14 +5,22 @@ let gMails = []
 createMails() 
 
 function createMails() {
-    gMails.unshift(createMail('First Mail', 'Hey Nathalie!'))  
-    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?'))    
+    gMails.unshift(createMail('First Mail', 'Hey Nathalie!', 'Michael'))  
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
+    gMails.unshift(createMail('Second Mail', 'Don\'t you miss the beach?', 'Nathalie'))    
    util.store(MAIL_KEY, gMails) 
    
 }
 
-function createMail(subject = '', body = '') {
-    return { id: util.makeId(), subject, body, isRead: false, sentAt: new Date(), priority: 0 }
+function createMail(subject = '', body = '', from='') {
+    return { id: util.makeId(), subject, body, isRead: false, sentAt: util.formatAMPM(new Date), priority: 0, from }
 }
 
 

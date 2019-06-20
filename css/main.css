@@ -3,6 +3,12 @@ html{
     font-family: Roboto;
 }
 
+.mail-preview {
+    background-color: rgba(128, 128, 128, 0.103);
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+}
 .flex {
     display: flex;
 }
