@@ -1,0 +1,15 @@
+.mail-app{
+    display: flex;
+}
+
+.mail-sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.mail-list{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}

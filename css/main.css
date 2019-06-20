@@ -48,3 +48,16 @@ html{
     color: black;
     font-weight: bold;
 }
+
+
+/* Footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+    background: lightgrey;
+    left: 0;
+    font-weight: bold;
+}
