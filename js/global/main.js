@@ -12,7 +12,7 @@ var app = new Vue({
     <div>
         <app-header></app-header>
         <router-view></router-view>
-        <footer>copyrights nathalie&michael 2019</footer>
+        <footer>All Beers Reserved => Nathalie & Michael 2019</footer>
     </div>
     `,
     components: {
