@@ -8,12 +8,8 @@ export default {
     template: `
     <section class="mail-list">
     <h1>Mail List</h1>
-<<<<<<< HEAD
-    <mail-preview v-for="mail in mails"
-=======
 
     <mail-preview @click="" class="flex" v-for="mail in mails"
->>>>>>> 7ea67928e458d4eab296190e40639452f751cf08
     :key="mail.id"
     :mail="mail"></mail-preview>
     </section>   

@@ -7,20 +7,11 @@ import mailCompose from '../../mail.app/mail.cmps/mail-compose.cmp.js'
 export default {
     name: 'mail-app',
     template: `
-<<<<<<< HEAD
-    <section class="mail-app">
-        <section class="mail-sidebar">
-    <mail-menu></mail-menu>
-    </section>
-    <mail-list :mails="mailsForDisplay"></mail-list>
-    <mail-compose></mail-compose>
-=======
     <section class="mail-app flex">
         <section class="mail-sidebar flex">
     <mail-compose></mail-compose>
     </section>
 <mail-list :mails="mailsForDisplay" class="flex"></mail-list>
->>>>>>> 7ea67928e458d4eab296190e40639452f751cf08
     </section>
     `,
     components: {
