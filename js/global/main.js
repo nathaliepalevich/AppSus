@@ -1,6 +1,5 @@
 'use strict'
 import appHeader from './global.cmps/app-header.cmp.js'
-
 import theRoutes from './routes.js'
 const myRouter = new VueRouter({ routes: theRoutes })
 Vue.use(VueRouter)
@@ -19,9 +18,6 @@ var app = new Vue({
         appHeader,
     },
     methods: {
-        foo() {
-            console.log('Got Here')
-        }
     },
     created() {
         console.log('App has been Created!')

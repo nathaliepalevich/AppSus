@@ -1,15 +1,18 @@
-.mail-app{
-    display: flex;
-}
+
 
 .mail-sidebar{
-    display: flex;
     flex-direction: column;
     width: 20vw;
 }
 
 .mail-list{
-    display: flex;
     flex-direction: column;
     width: 80vw;
+}
+
+ .mail-preview {
+    background-color: rgba(128, 128, 128, 0.103);
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
 }
