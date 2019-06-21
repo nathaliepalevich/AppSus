@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         selectedMail(mailId){
-            console.log(mailId);
+            console.log('vv');
             
             this.$emit('show-details', mailId)
         }
