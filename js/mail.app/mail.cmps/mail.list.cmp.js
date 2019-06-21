@@ -12,7 +12,6 @@ export default {
     <mail-preview @click.native="selectedMail(mail.id)" class="flex" v-for="mail in mails"
     :key="mail.id"
     :mail="mail"></mail-preview>
-
     </section>   
     `,
     components: {

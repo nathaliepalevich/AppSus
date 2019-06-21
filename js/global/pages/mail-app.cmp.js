@@ -1,5 +1,6 @@
 import mailService from '../../mail.app/mail.service.js'
 import mailList from '../../mail.app/mail.cmps/mail.list.cmp.js'
+import mailMenu from '../../mail.app/mail.cmps/mail-menu.cmp.js'
 import mailCompose from '../../mail.app/mail.cmps/mail-compose.cmp.js'
 import mailDetails from '../../mail.app/mail.cmps/mail-details.cmp.js'
 // import serviceUtil from '../service.util.js'
@@ -18,7 +19,11 @@ export default {
     components: {
         mailList,
         mailCompose,
-        mailDetails
+        mailDetails,
+        mailMenu,
+
+        // filter: null
+        // serviceUtil
     },
     computed: {
         mailsForDisplay() {
