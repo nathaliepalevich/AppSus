@@ -8,7 +8,7 @@ export default [
     { path: '/', component: homepageCmp },
     {
         path: '/mail', component: mailCmp, children: [
-            {path: '/compose', components: mailCmp},
+            {path: '/compose', components: composeMailCmp},
             { path: '/inbox', components: mailCmp },
             { path: '/sent', components: mailCmp }
         ]
