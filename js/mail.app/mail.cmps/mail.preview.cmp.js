@@ -2,24 +2,21 @@ export default {
     name: 'mail-preview',
     props: ['mail'],
     template: `
-    <div class="mail-preview">
+    <router-link :to="mailURL" class="mail-preview">
         <h6>{{mail.from}}</h6>
-        <h6>{{mail.subject}}</h6>
-        <h6>{{mail.body}}</h6>
+        <h4>{{mail.subject}}</h4>
+        <h5>{{mail.body}}</h5>
         <h6>{{mail.sentAt}}</h6>
-       <router-link :to="mailURL">Read mail</router-link>    
-    </div>
+    </router-link>    
     `,
-    created() {
-    },
-    // data() {
-    //     return {
-    //         mail: null
-    //     }
-    // },
     computed: {
         mailURL() {
             return '/mail/' + this.mail.id
+        },
+        readClass(){
+            return {
+                read: this.isRead
+            }
         }
     },
-}
+} 

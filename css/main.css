@@ -1,3 +1,8 @@
+/* Global */
+a{
+    text-decoration: none;
+    color: black;
+}
 /* Helpers */
 html{
     font-family: Roboto;
@@ -7,6 +12,9 @@ html{
     display: flex;
 } 
 
+.column{
+    flex-direction: column;
+}
 .space-between {
     justify-content: space-between;
 }

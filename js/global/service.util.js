@@ -1,15 +1,5 @@
 
 
-function store(key, any) {
-    localStorage[key] = JSON.stringify(any);
-}
-
-function load(key) {
-    var str = localStorage[key] || 'null';
-    return JSON.parse(str);
-}
-
-
 
 function makeId(length = 5) {
     var text = "";
@@ -33,8 +23,7 @@ function formatAMPM(date) {
   }
   
 export default {
-    store,
-    load,
+
     makeId,
     formatAMPM
 }

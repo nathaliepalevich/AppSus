@@ -2,8 +2,8 @@
 export default {
     name: 'mail-menu',
     template: `
-    <ul class="mail-menu">
-        <router-link to="/mail/compose">Compose</router-link>      
+    <ul class="mail-menu flex column">
+    <router-link to="/mail/compose">Compose</router-link>      
     <router-link to="/mail/inbox">Inbox</router-link>
     <router-link to="/mail/sent">Sent Mail</router-link>      
 
