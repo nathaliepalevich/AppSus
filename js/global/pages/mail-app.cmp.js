@@ -10,7 +10,7 @@ export default {
     template: `
     <section class="mail-app flex">
         <section class="mail-sidebar flex">
-    <mail-compose></mail-compose>
+    <mail-menu></mail-menu>
     </section>
     <mail-list v-if="!isDetails" :mails="mailsForDisplay" @show-datails="showSelectedMail" class="flex" ></mail-list>
     <mail-details v-else="isDetails" :mail="selectedMail" ></mail-details>

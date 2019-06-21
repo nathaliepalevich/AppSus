@@ -24,7 +24,7 @@ export default {
     },
     created() {
         this.mails = serviceUtil.load('savedMail')
-        console.log(this.mails);
+        // console.log(this.mails);
     },
     methods: {
         selectedMail(mailId){

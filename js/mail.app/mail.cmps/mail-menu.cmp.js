@@ -8,5 +8,8 @@ export default {
     <router-link to="/mail/sent">Sent Mail</router-link>      
 
 </ul>
-`
+`,
+    created() {
+        console.log('Created mail menu', this.$route.fullPath)
+    }
 }
