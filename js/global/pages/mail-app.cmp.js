@@ -1,7 +1,7 @@
 import mailService from '../../mail.app/mail.service.js'
 import mailList from '../../mail.app/mail.cmps/mail.list.cmp.js'
 import mailMenu from '../../mail.app/mail.cmps/mail-menu.cmp.js'
-import mailCompose from '../../mail.app/mail.cmps/mail-compose.cmp.js'
+// import mailCompose from '../../mail.app/mail.cmps/mail-compose.cmp.js'
 // import serviceUtil from '../service.util.js'
 
 export default {
@@ -9,16 +9,14 @@ export default {
     template: `
     <section class="mail-app flex">
         <section class="mail-sidebar flex">
-    <mail-compose></mail-compose>
+    <mail-menu></mail-menu>
     </section>
 <mail-list :mails="mailsForDisplay" class="flex"></mail-list>
     </section>
     `,
     components: {
         mailList,
-        mailCompose,
         mailMenu,
-        mailCompose
         // filter: null
         // serviceUtil
     },
@@ -36,11 +34,11 @@ export default {
         }
     },
     created() {
-        console.log('mail app created')
-        console.log('the url ISSSSSSSS:', this.$route.params)
-        console.log(this.mails)
-        //  this.mails = serviceUtil.load('savedMail')
-        //  console.log(this.mails);
+        // console.log('mail app created')
+        // console.log('the url ISSSSSSSS:', this.$route.params)
+        // console.log(this.mails)
+        // //  this.mails = serviceUtil.load('savedMail')
+        // //  console.log(this.mails);
 
     },
 }

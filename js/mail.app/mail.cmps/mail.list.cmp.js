@@ -23,8 +23,8 @@ export default {
         }
     },
     created() {
-        console.log('mail list created')
+        // console.log('mail list created')
         this.mails = serviceUtil.load('savedMail')
-        console.log(this.mails);
+        // console.log(this.mails);
     },
 }

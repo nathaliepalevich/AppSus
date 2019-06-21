@@ -11,7 +11,7 @@ export default {
     </div>
     `,
     created() {
-        console.log('got to mail preview')
+        // console.log('got to mail preview')
 
     },
     // data() {
