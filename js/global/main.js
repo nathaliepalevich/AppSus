@@ -25,6 +25,7 @@ var app = new Vue({
     },
     created() {
         console.log('App has been Created!')
+        
     },
     router: myRouter
     

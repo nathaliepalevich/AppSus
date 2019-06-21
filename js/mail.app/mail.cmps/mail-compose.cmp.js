@@ -1,8 +1,8 @@
 'use strict'
 
-export default{
+export default {
     name: 'mail-compose',
     template: `
-        <h1> mail compose here </h1>
+        <h1> Composing a new mail! </h1>
     `
 }

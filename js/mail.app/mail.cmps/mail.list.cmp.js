@@ -8,11 +8,9 @@ export default {
     template: `
     <section>
     <h1>Mail List</h1>
-
     <mail-preview v-for="mail in mails"
     :key="mail.id"
     :mail="mail"></mail-preview>
-
     </section>   
     `,
     components: {
