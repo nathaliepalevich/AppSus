@@ -9,10 +9,7 @@ function load(key) {
     return JSON.parse(str);
 }
 
-function getById(items, itemId) {
-    const item = items.find(item => item.id === itemId);
-    return Promise.resolve(item)
-}
+
 
 function makeId(length = 5) {
     var text = "";
@@ -38,7 +35,6 @@ function formatAMPM(date) {
 export default {
     store,
     load,
-    getById,
     makeId,
     formatAMPM
 }

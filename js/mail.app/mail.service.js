@@ -23,7 +23,12 @@ function createMail(subject = '', body = '', from='') {
     return { id: util.makeId(), subject, body, isRead: false, sentAt: util.formatAMPM(new Date), priority: 0, from }
 }
 
+function getById(mailId) {
+    const item = gMails.find(mail => mail.id === mailId);
+    return item
+}
 
 export default {
-    createMails
+    gMails,
+    getById
 }

@@ -9,7 +9,7 @@ export default {
     <section class="mail-list">
     <h1>Mail List</h1>
 
-    <mail-preview @click="" class="flex" v-for="mail in mails"
+    <mail-preview @click.native="selectedMail(mail.id)" class="flex" v-for="mail in mails"
     :key="mail.id"
     :mail="mail"></mail-preview>
 
@@ -24,8 +24,14 @@ export default {
         }
     },
     created() {
-        console.log('mail list created')
         this.mails = serviceUtil.load('savedMail')
         console.log(this.mails);
+    },
+    methods: {
+        selectedMail(mailId){
+            console.log(mailId);
+            
+            this.$emit('show-details', mailId)
+        }
     },
 }
