@@ -11,16 +11,15 @@ export default {
         </div>
     
     `,
+    data() {
+        return {
+            mail: null
+        }
+    },
     created() {
         const currMail = this.$route.params.mailId
         this.mail = mailService.getById(currMail)
     },
-    // data() {
-    //     return {
-    //         mail: null
-    //     }
-    // },
-    // methods: {
 
-    // },
+
 }

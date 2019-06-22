@@ -27,9 +27,7 @@ export default {
     computed: {
         setFilter(event) {
             if (this.$route.path === '/mail') {
-                // debbuger
                 console.log(event);
-
                 // bus.$emit('filter-name', this.name)
             }
         }

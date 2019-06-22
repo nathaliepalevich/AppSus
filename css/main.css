@@ -57,6 +57,21 @@ html{
     font-weight: bold;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+form input {
+    padding: 5px;
+    margin: 10px;
+}
+
+textarea {
+    width: 200px;
+    height: 400px;
+}
 
 /* Footer */
 footer{
