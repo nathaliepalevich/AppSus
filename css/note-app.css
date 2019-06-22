@@ -1,0 +1,10 @@
+.note-preview{
+    border: 1px solid black;
+    margin: 1rem;
+    width: 200px;
+    text-align: center;
+}
+
+.note-preview.background-color{
+ background: yellow;
+}
