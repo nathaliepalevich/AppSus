@@ -8,6 +8,7 @@ export default {
             <button @click="deleteNote">X</button>
             <button @click="toggleEditBox">E</button>
             <input type="text" ref="editBox" v-show="editBox" v-model="note.txt" @keydown.enter="editTxt" placeholder="Write a note">
+            
 
         </div>
     `,
