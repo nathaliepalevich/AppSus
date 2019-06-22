@@ -7,4 +7,14 @@
 
 .note-preview.background-color{
  background: yellow;
+
+}
+
+.note-preview img {
+    width: 100px;
+    height: 100px;
+}
+
+.note-preview .todo-done{
+    text-decoration: line-through;
 }
