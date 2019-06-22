@@ -10,16 +10,31 @@ export default {
             <!-- Main Logo -->
             <h1 class="main-logo">AppSUS</h1>
             <!-- The search bar will have to be relative to the app we're in -->
-            <search-box></search-box> 
+            <search-box :set-filter="setFilter"></search-box> 
             <!-- The app logo will also have to be relative to the current app -->
-
-    <app-logo></app-logo> 
-    <main-navbar></main-navbar>
+            <app-logo></app-logo> 
+            <main-navbar></main-navbar>
         </section>
     `,
     components: {
         appLogo,
         mainNavbar,
         searchBox
-    }
+    },
+    methods: {
+       
+    },
+    computed: {
+        setFilter(event) {
+            if (this.$route.path === '/mail') {
+                // debbuger
+                console.log(event);
+
+                // bus.$emit('filter-name', this.name)
+            }
+        }
+    },
+    created() {
+        // console.log(this.$route.path)
+    },
 }

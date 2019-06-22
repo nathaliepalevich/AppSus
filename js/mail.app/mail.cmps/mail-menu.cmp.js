@@ -2,10 +2,13 @@
 export default {
     name: 'mail-menu',
     template: `
-    <nav class="mail-menu">
-        <router-link to="/compose">Compose</router-link>      
-    <!-- <router-link to="/mail/inbox">Inbox</router-link>
-    <router-link to="/mail/sent">Sent Mail</router-link>       -->
-</nav>
-`
+    <ul class="mail-menu flex column">
+    <router-link to="/mail/compose">Compose</router-link>      
+    <router-link to="/mail/inbox">Inbox</router-link>
+    <router-link to="/mail/sent">Sent Mail</router-link>      
+</ul>
+`,
+    created() {
+        console.log('Created mail menu', this.$route.fullPath)
+    }
 }
