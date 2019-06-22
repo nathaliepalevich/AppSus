@@ -1,6 +1,7 @@
 import mailService from '../../mail.app/mail.service.js'
 import mailList from '../../mail.app/mail.cmps/mail.list.cmp.js'
 import mailMenu from '../../mail.app/mail.cmps/mail-menu.cmp.js'
+import mailCompose from '../../mail.app/mail.pages/mail-compose.cmp.js'
 import searchBox from '../global.cmps/search-box.cmp.js'
 import composeMail from '../../mail.app/mail-pages/compose.cmp.js'
 

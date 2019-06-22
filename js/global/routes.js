@@ -1,9 +1,9 @@
 import homepageCmp from '../global/pages/homepage.cmp.js'
 import mailCmp from '../global/pages/mail-app.cmp.js'
-import misskeepCmp from './pages/missKeepApp.cmp.js'
+import notesCmp from './pages/note-app.cmp.js'
 import maildetailsCmp from '../mail.app/mail.cmps/mail-details.cmp.js';
 import inbox from '../mail.app/mail-pages/inbox.cmp.js'
-import composeMail from '../mail.app/mail.cmps/mail-compose.cmp.js';
+import composeMail from '../mail.app/mail.pages/mail-compose.cmp.js';
 
 
 
@@ -15,7 +15,8 @@ export default [
         // {path: '/mail/compose', components: composeMail},
         // { path: '/sent', components: mailCmp }
     ]},
-    { path: '/missKeep', component: misskeepCmp }
+    { path: '/mail/:mailId', component: maildetailsCmp },
+    { path: '/missKeep', component: notesCmp }
 
 
 ]
