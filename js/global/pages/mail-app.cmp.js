@@ -1,10 +1,10 @@
 import mailService from '../../mail.app/mail.service.js'
 import mailList from '../../mail.app/mail.cmps/mail.list.cmp.js'
 import mailMenu from '../../mail.app/mail.cmps/mail-menu.cmp.js'
-import mailCompose from '../../mail.app/mail.pages/mail-compose.cmp.js'
 import searchBox from '../global.cmps/search-box.cmp.js'
 import composeMail from '../../mail.app/mail-pages/compose.cmp.js'
-
+import mailInbox from '../../mail.app/mail-pages/inbox.cmp.js'
+import mailDetails from '../../mail.app/mail.cmps/mail-details.cmp.js'
 
 export default {
     name: 'mail-app',
@@ -14,14 +14,15 @@ export default {
             <mail-menu></mail-menu>
         </section>
         <router-view></router-view>
-        <mail-list :mails="mailsForDisplay" @show-datails="showSelectedMail" class="flex column" ></mail-list>
+        <mail-list v-if="any"  :mails="mailsForDisplay" @show-datails="showSelectedMail"  class="flex column" ></mail-list>
         <!-- WE NEED TO FIND A WAY TO OPEN MAIL DETAILS 
              AND TO NOTICE 2 THINGS: 
              1) THE URL (ROUTER-LINK) WILL CHANGE
              2) WE NEED TO RENDER THE LEFT MENU COMPUNENT SO IT WILL STAY WITH US
                 FOR THAT WELL USE THE CHILDREN ROUTS -->
-        <!-- <mail-details></mail-details> -->
-        <compose-mail></compose-mail>
+                <search-box></search-box>    
+        <mail-details v-if="isDetails"></mail-details>
+        <compose-mail v-if="isCompose"></compose-mail>
     </section>
     `,
     data() {
@@ -35,15 +36,31 @@ export default {
     components: {
         mailList,
         mailMenu,
+        mailInbox,
+        composeMail,
         searchBox,
-        composeMail
+        mailDetails
     },
     computed: {
         mailsForDisplay() {
             if (!this.filter) return this.mails
+     
+            
             return this.mails.filter(mail => mail.from.includes(this.filter))
             //  && this.mails.filter(mail => mail.body >= this.filter)
         },
+        isInbox(){
+            return this.$route.path === '/mail/inbox'
+        },
+        isCompose(){
+            return this.$route.path === '/mail/compose'
+        },
+        any(){
+            return !this.isDetails || this.isInbox
+        }
+    },
+    filterMails(){
+
     },
     methods: {
         showSelectedMail(id) {
@@ -52,13 +69,13 @@ export default {
         setFilter() {
             this.filter = searchBox.emitFilter()
             console.log(this.filter);
-        }
+        },
+
     },
 
     created() {
-        if (!this.$route.params) {
-            this.isDetails = true
-        }
+        // this.$router.push('/mail/inbox')
+
         mailService.getEmails()
             .then(mails => this.mails = mails)
     },

@@ -1,11 +1,21 @@
 import mailList from '../mail.cmps/mail.list.cmp.js'
 import mailService from '../mail.service.js'
+import mailMenu from '../mail.cmps/mail-menu.cmp.js'
+
 export default {
-     name: 'mail-list',
+     name: 'mail-inbox',
      template: `
-<section class="mail-list">
-<mail-list :mails="mailsForDisplay" @show-datails="showSelectedMail" class="flex column" ></mail-list>
-</section>
+     <section class="mail-inbox">
+
+          <section class="mail-sidebar flex column">
+            <mail-menu></mail-menu>
+          </section>
+          <!-- <mail-list v-if="mails" 
+          :mails="mails" 
+           @show-datails="showSelectedMail" 
+           class="flex column" >
+          </mail-list> -->
+     </section>
 `,
 data() {
      return {
@@ -16,7 +26,8 @@ data() {
      }
 },
      components: {
-          mailList
+          mailList,
+          mailMenu
      },
      computed: {
           mailsForDisplay() {
@@ -26,11 +37,15 @@ data() {
            },    
      },
      created() {
-          if (!this.$route.params) {
-              this.isDetails = true
-          }
-          mailService.getEmails()
-              .then(mails => this.mails = mails)
+          console.log('sdfsdfsdf')
+          // if (!this.$route.params) {
+          //      console.log(this.$route.params);
+               
+          //     this.isDetails = true
+          // }
+          // mailService.getEmails()
+          //     .then(mails => this.mails = mails)
+              
       },
       methods: {
           setFilter() {

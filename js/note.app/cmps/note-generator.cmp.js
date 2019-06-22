@@ -5,6 +5,8 @@ export default {
     template: `
         <div class="note-generator">
         <input type="text" ref="inputBox" v-model="noteTxt" @keydown.enter="addNote" placeholder="Write a note">
+        <input class="jscolor {hash:true}" value="#ffffff" onchange="onPickColor(this.value)">
+
 </div>
     `,
     data() {
@@ -13,7 +15,7 @@ export default {
         }
     },
     methods: {
-        addNote: function () {
+        addNote() {
             noteService.addTxtNote(this.noteTxt)
             this.$refs.inputBox.value = ''
         }
