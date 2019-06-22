@@ -8,7 +8,6 @@ export default {
     template: `
     <section class="mail-list">
     <h1>Mail List</h1>
-
     <mail-preview @click="" class="flex" v-for="mail in mails"
     :key="mail.id"
     :mail="mail"></mail-preview>
@@ -21,10 +20,5 @@ export default {
         return {
             mails: null
         }
-    },
-    created() {
-        // console.log('mail list created')
-        this.mails = serviceUtil.load('savedMail')
-        // console.log(this.mails);
     },
 }
