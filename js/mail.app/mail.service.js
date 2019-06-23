@@ -1,19 +1,33 @@
 import util from '../global/service.util.js'
 
 const formatedTime = util.formatAMPM(new Date)
-const MAIL_KEY = 'savedMail'
+const INBOX_KEY = 'inboxMail'
+const SENT_KET = 'sentMail'
 var gMails = []
 
 
-function getEmails() {
-    let eMails = load(MAIL_KEY)
+// function getEmails() {
+//     let eMails = load(INBOX_KEY)
+//     if (eMails) gMails = eMails
+//     else {
+//         gMails = createMails()
+//         store(INBOX_KEY, gMails)
+//     }
+//     return Promise.resolve(gMails)
+// }
+
+// TRY TO GET MAILS DEPAND ON IF INBOX OR SENT
+function getEmails(mails) {
+    let eMails = load(mails)
     if (eMails) gMails = eMails
     else {
         gMails = createMails()
-        store(MAIL_KEY, gMails)
+        store(mails, gMails)
     }
     return Promise.resolve(gMails)
 }
+
+
 
 // function filter(whatToFilter, filter){
 //     var filtered = whatToFilter.slice();
@@ -35,6 +49,15 @@ function createMails() {
     createMail('Nine Mail', 'Don\'t you miss the beach?', 'Nathalie')
     createMail('Ten Mail', 'Don\'t you miss the beach?', 'Nathalie', true)
     return gMails
+}
+
+function addToSent(sentMail){
+    store(SENT_KET, sentMail)
+}
+
+function addMail(){
+    console.log(gMails);
+    store(INBOX_KEY, gMails)
 }
 
 function createMail(subject = '', body = '', from = '', isRead = false) {
@@ -63,6 +86,8 @@ export default {
     load,
     getById,
     getEmails,
-    createMail
+    createMail,
+    addMail,
+    addToSent
     // filter
 }

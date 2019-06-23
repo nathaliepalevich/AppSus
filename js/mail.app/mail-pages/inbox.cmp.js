@@ -8,7 +8,8 @@ export default {
      <section class="mail-inbox">
 
           <section class="mail-sidebar flex column">
-            <mail-menu></mail-menu>
+               <!-- put mail-menu in comment 11:38 wasnt any prob -->
+            <!-- <mail-menu></mail-menu> -->
           </section>
           <!-- <mail-list v-if="mails" 
           :mails="mails" 

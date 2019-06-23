@@ -24,13 +24,14 @@ export default {
       },
     }
   },
+  computed: {
+  },
   methods: {
     // submit form handler
     addMail() {
-      console.log(this.mail);
-      
-      mailService.createMail()
-      mailService.store('savedMail', this.mail);
+      mailService.createMail(this.mail.subject, this.mail.body, this.mail.from)
+      mailService.addMail('inboxMail', this.mail);
+      mailService.addToSent('sentMails', this.mail)
     },
     // validate by type and value
     validate(type, value) {
