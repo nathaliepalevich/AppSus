@@ -17,7 +17,7 @@ export default {
     },
     created() {
         noteService.getNotes()
-        .then(notes => this.notes = notes)
+            .then(notes => this.notes = notes)
     },
     components: {
         noteGenerator,
