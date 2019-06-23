@@ -1,5 +1,6 @@
 import util from '../global/service.util.js';
 import storage from '../global/storage.service.js';
+import serviceUtil from '../global/service.util.js';
 const NOTE_KEY = 'savedNotes';
 let notesDB = [];
 
@@ -14,14 +15,14 @@ function getNotes() {
 }
 
 // Create
-function createNote(type, txt = '', imgUrl = '', backgroundClr = 'white') {
+function createNote(type, txt = '', imgUrl = '') {
     return {
         type: type,
         id: util.makeId(),
         txt: txt,
         img: imgUrl,
         todos: [],
-        background: backgroundClr
+        background: 'white'
     }
 }
 
@@ -59,10 +60,26 @@ function editNoteImg(noteId, img) {
     storage.store(NOTE_KEY, notesDB);
 }
 
-function toggleTodo(noteId, todoIdx){
+function toggleTodo(noteId, todoIdx) {
     let noteIdx = notesDB.findIndex(note => note.id === noteId);
     let curTodo = notesDB[noteIdx].todos[todoIdx]
     curTodo.isDone = !curTodo.isDone
+    storage.store(NOTE_KEY, notesDB);
+}
+
+function addTodoItem(noteId, todoItem) {
+    let noteIdx = notesDB.findIndex(note => note.id === noteId);
+    let randomId = serviceUtil.makeId();
+    let todo = {
+        id: randomId,
+        txt: todoItem,
+        isDone: false,
+        priority: 0
+    };
+    notesDB[noteIdx].todos.push(todo)
+}
+
+function saveNotes() {
     storage.store(NOTE_KEY, notesDB);
 }
 
@@ -90,6 +107,7 @@ function _createTxtNotes() {
 
 export default {
     getNotes,
+    saveNotes,
     createNote,
     addTxtNote,
     addImgNote,
@@ -98,5 +116,6 @@ export default {
     deleteTodo,
     editNoteTxt,
     editNoteImg,
+    addTodoItem,
     toggleTodo
 }

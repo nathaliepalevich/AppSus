@@ -17,6 +17,7 @@ export default {
     },
     methods: {
         addTodoItem() {
+            console.log('adding a todo from note-todos to:', this.note)
             let randomId = utilService.makeId();
             this.todos.push({id: randomId,
                  txt: this.todo,

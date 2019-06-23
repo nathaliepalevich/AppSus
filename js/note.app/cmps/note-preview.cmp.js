@@ -4,7 +4,7 @@ import serviceUtil from '../../global/service.util.js';
 export default {
     name: 'note-preview',
     template: `
-        <div class="note-preview background-color">
+        <div class="note-preview" :style="{background: note.background}">
             <p v-if="note.txt.length">{{note.txt}}</p>
             <img v-if="note.img.length" :src=note.img title="Note Image"/>
             <!-- <ul v-if="todos.length"> -->
@@ -18,14 +18,17 @@ export default {
             <button @click="deleteNote">X</button>
             <button @click="toggleEditBox">E</button>
             <input type="text" ref="editBox" v-show="editBox" v-model="note.txt" @keydown.enter="editTxt" placeholder="Write a note">
-            <input type="text" ref="editBox" v-show="editBox" v-model="note.img" @keydown.enter="editTxt" placeholder="Add Image URL">
+            <input type="text" ref="editBox" v-show="editBox" v-model="note.img" @keydown.enter="editImg" placeholder="Add Image URL">
+            <input type="text" ref="editBox" v-show="editBox" v-model="todoToAdd" @keydown.enter="addTodo" placeholder="Add Todo">
+            <input type="color" ref="editbox" v-show="editBox" v-model="note.background" @change="changeBackgroundColor" >
         </div>
     `,
     props: ['note'],
     data() {
         return {
             editBox: false,
-            todos: this.note.todos
+            todos: this.note.todos,
+            todoToAdd: ''
         }
     },
     methods: {
@@ -38,7 +41,7 @@ export default {
             noteService.deleteTodo(this.note.id, idx)
         },
 
-        toggleEditBox: function () {
+        toggleEditBox() {
             this.editBox = !this.editBox;
             // If the edit box is open, we will want to make it autofocus on the first box
             //It won't autofocus for some reason
@@ -47,18 +50,26 @@ export default {
             noteService.toggleTodo(this.note.id, todoIdx)
         },
 
-        editTxt: function () {
+        editTxt() {
             console.log('editing txt');
             noteService.editNoteTxt(this.note.id, this.note.txt);
             this.editBox = false;
         },
-        editImg: function () {
+        editImg() {
             console.log('editing img');
             noteService.editNoteImg(this.note.id, this.note.img);
+        },
+        changeBackgroundColor() {
+            console.log('editing color! to:', this.note.background);
+            noteService.saveNotes()
+            console.log('background:', this.note.background)
+            // noteService.editNoteColor(this.note.id,)
+        },
+        addTodo() {
+            console.log('Adding todo! need to push the new text', this.todoToAdd, 'to', this.note.todos)
+            noteService.addTodoItem(this.note.id, this.todoToAdd);
+            noteService.saveNotes();
+            this.todoToAdd= ''
         }
     },
-    created() {
-        let todos = this.note.todos;
-    },
-
 }
