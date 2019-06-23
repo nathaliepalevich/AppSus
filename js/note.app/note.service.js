@@ -22,7 +22,7 @@ function createNote(type, txt = '', imgUrl = '') {
         txt: txt,
         img: imgUrl,
         todos: [],
-        background: 'white'
+        background: '#FFFFFF'
     }
 }
 
@@ -96,6 +96,28 @@ function deleteTodo(noteId, todoIdx) {
     storage.store(NOTE_KEY, notesDB);
 }
 
+function deleteEmptyNote(noteId) {
+    let noteIdx = notesDB.findIndex(note => note.id === noteId);
+    let curNote = notesDB[noteIdx]
+    if (curNote.txt === '' && curNote.img === '' && !curNote.todos.length) deleteNote(noteId)
+}
+
+//Notes Filtering
+function filterNotes(filter) {
+    return new Promise((resolve, reject) => {
+        let filteredNotes = notesDB.slice();
+        filteredNotes = notesDB.filter(note => {
+            return (note.txt.toLowerCase().includes(filter.txt.toLowerCase()) ||
+                note.todos.forEach(todo => {
+                    todo.txt.toLowerCase().includes(filter.txt.toLowerCase())
+                    console.log('checking if the todo', todo.txt, 'has the string', filter.txt, 'in it')
+                })
+            )
+        })
+        return resolve(filteredNotes)
+    })
+    // notesDB.filter(note=> note.txt.toLowerCase().includes(filter.txt.toLowerCase()))
+}
 // Hard-Coded todos
 function _createTxtNotes() {
     let notes = [];
@@ -117,5 +139,7 @@ export default {
     editNoteTxt,
     editNoteImg,
     addTodoItem,
-    toggleTodo
+    toggleTodo,
+    filterNotes,
+    deleteEmptyNote
 }

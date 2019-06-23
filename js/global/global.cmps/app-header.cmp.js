@@ -21,18 +21,10 @@ export default {
         mainNavbar,
         searchBox
     },
-    methods: {
-       
-    },
     computed: {
         setFilter(event) {
             if (this.$route.path === '/mail') {
-                console.log(event);
-                // bus.$emit('filter-name', this.name)
             }
         }
-    },
-    created() {
-        // console.log(this.$route.path)
-    },
+    }
 }

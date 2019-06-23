@@ -1,10 +1,3 @@
-var bus = new Vue();
-
-// export const SHOW_MSG = 'show-msg';
-// export const PUKI = 'puki';
-
-bus.$on(PUKI, (ev)=>{
-    console.log('Puki just Happened', ev);
-})
-
+const bus = new Vue();
 export default bus;
+export const FILTER_NOTES = 'filterNotes'

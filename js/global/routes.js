@@ -10,10 +10,10 @@ export default [
     { path: '/', component: homepageCmp },
     {path: '/mail', component: mailCmp,
     children: [
-        // { path: '/inbox', components: inbox },
+        // { path: '/inbox', component: inbox },
         { path: '/mail/:mailId', component: mailDetails },
-        // { path: '/sent', components: mailCmp },
-        // {path: '/compose', components: composeMail}
+        // { path: '/sent', component: mailCmp },
+        // {path: '/compose', component: composeMail}
     ]
 },
 {path: '/compose', components: composeMail},

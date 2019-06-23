@@ -12,15 +12,19 @@ export default {
            <!-- </ul> -->
            <ul v-if="todos.length">
                <li v-for="(todo, idx) in todos" :key="todo.id" :todo="todo" @click="toggleTodo(idx)" :class="{'todo-done' : todo.isDone}">
-                   {{todo.txt}} <button @click.stop="deleteTodo(idx)">X</button>
+                   {{todo.txt}} <button @click.stop="deleteTodo(idx)"><i class="fas fa-times"></i></button>
                 </li>
            </ul>
-            <button @click="deleteNote">X</button>
-            <button @click="toggleEditBox">E</button>
+            <button @click="deleteNote"><i class="fas fa-trash-alt"></i></button>
+            <button @click="toggleEditBox"><i class="fas fa-edit"></i></button>
+
+            <!-- <button v-show="editBox"><i class="fas fa-paragraph"></i></button>
+           <button v-show="editBox"><i class="fas fa-image"></i></button>
+            <button v-show="editBox"><i class="fas fa-list-alt"></i></button> -->
+            <input type="color" ref="editbox" v-show="editBox" v-model="note.background" @change="changeBackgroundColor" >
             <input type="text" ref="editBox" v-show="editBox" v-model="note.txt" @keydown.enter="editTxt" placeholder="Write a note">
             <input type="text" ref="editBox" v-show="editBox" v-model="note.img" @keydown.enter="editImg" placeholder="Add Image URL">
             <input type="text" ref="editBox" v-show="editBox" v-model="todoToAdd" @keydown.enter="addTodo" placeholder="Add Todo">
-            <input type="color" ref="editbox" v-show="editBox" v-model="note.background" @change="changeBackgroundColor" >
         </div>
     `,
     props: ['note'],
@@ -69,7 +73,10 @@ export default {
             console.log('Adding todo! need to push the new text', this.todoToAdd, 'to', this.note.todos)
             noteService.addTodoItem(this.note.id, this.todoToAdd);
             noteService.saveNotes();
-            this.todoToAdd= ''
+            this.todoToAdd = ''
         }
     },
+    updated() {
+        noteService.deleteEmptyNote(this.note.id)
+    }
 }
