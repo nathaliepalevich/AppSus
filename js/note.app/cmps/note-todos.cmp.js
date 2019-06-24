@@ -6,7 +6,7 @@ export default {
     template: `
         <div class="note-todos"> 
         <input type="text" ref="inputBox" v-model="todo" @keydown.enter="addTodoItem" placeholder="Add Todo">
-        <button @click="addTodoNote">Send</button>
+        <!-- <button @click.stop="addTodoNote">Send</button> -->
         </div>
     `,
     data() {
@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         addTodoItem() {
-            console.log('adding a todo from note-todos to:', this.note)
+            console.log('adding a todo from note-todos')
             let randomId = utilService.makeId();
             this.todos.push({id: randomId,
                  txt: this.todo,
@@ -26,6 +26,7 @@ export default {
                 });
             console.log(this.todos);
             this.$refs.inputBox.value = ''
+            this.addTodoNote()
         },
         addTodoNote() {
             console.log('adding todos note!');
@@ -36,9 +37,6 @@ export default {
     },
     mounted() {
         this.$refs.inputBox.focus()
-    },
-    updated() {
-        console.log('the length of the todos is', this.todos.length)
     },
     created(){
         

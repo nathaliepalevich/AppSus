@@ -6,7 +6,9 @@ export default{
         <section class="note-list">
         <note-preview v-for="note in notes"
         :key="note.id"
-        :note="note"></note-preview>
+        :note="note" class="flex flex-column align-center justify-center">
+        
+    </note-preview>
         </section>
     `,
     props: ['notes']

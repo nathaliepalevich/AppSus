@@ -6,11 +6,11 @@ import searchBox from './search-box.cmp.js'
 export default {
     name: 'app-header',
     template: `
-        <section class="app-header flex align-center space-between">
+        <section class="app-header flex align-center">
             <!-- Main Logo -->
             <h1 class="main-logo">AppSUS</h1>
             <!-- The search bar will have to be relative to the app we're in -->
-            <search-box :set-filter="setFilter"></search-box> 
+            <search-box class="search-box" :set-filter="setFilter"></search-box> 
             <!-- The app logo will also have to be relative to the current app -->
             <app-logo></app-logo> 
             <main-navbar></main-navbar>

@@ -1,22 +1,60 @@
+@font-face {
+    font-family: LogoFont;
+    src: url(/fonts/Cocomat\ Light-trial.ttf);
+}
+
 /* Global*/
-a{
+
+* {
+    box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+a {
     text-decoration: none;
     color: black;
 }
+
 /* Helpers */
-html{
+
+html {
     font-family: Roboto;
+}
+
+button {
+    cursor: pointer;
 }
 
 .flex {
     display: flex;
-} 
+}
 
-.column{
+.flex-row {
+    flex-direction: row;
+}
+
+.flex .full {
+    flex: 1;
+}
+
+.wrap {
+    flex-wrap: wrap
+}
+
+.flex-column {
     flex-direction: column;
 }
+
 .space-between {
     justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 .align-center {
@@ -26,7 +64,11 @@ html{
 /* Apps Header */
 
 .app-header {
-    background: rgb(255, 164, 164);
+    background: #f9f9f9;
+    border-bottom: 2px solid #838e80;
+}
+.main-logo {
+    font-family: LogoFont;
 }
 
 .app-header .main-logo {
@@ -34,24 +76,34 @@ html{
     margin-left: 1.875rem;
 }
 
-.main-navbar {
-    margin-right: 1.875rem;
+.app-logo{
+    font-family: LogoFont;
+    letter-spacing: 2.2px;
+    word-spacing: 4.2px;
+    text-decoration: overline solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    padding: 0 50px;
 }
 
-.main-navbar {
-    margin-right: 1.875rem;
+.app-header .search-box {
+    margin: 0 1.5rem;
 }
 
-.main-navbar  {
-    margin-right: 1.875rem;
+.app-header .search-box input {
+    height: 3rem;
+    width: 18rem;
+    padding-left: 1.5rem;
 }
-.main-navbar a{
+
+.main-navbar a {
     text-decoration: none;
     font-weight: bold;
     padding: 5px;
-
 }
-.main-navbar a:visited  {
+
+.main-navbar a:visited {
     margin-right: 1.875rem;
     color: black;
     font-weight: bold;
@@ -74,13 +126,16 @@ textarea {
 }
 
 /* Footer */
-footer{
+
+footer {
     position: fixed;
     bottom: 0;
     text-align: center;
     padding: 1rem 0;
     width: 100%;
-    background: lightgrey;
+    background: #2b2b2bfc;
+    color: white;
     left: 0;
     font-weight: bold;
-} 
+    box-shadow: -2px -2px 4px 0px rgba(0,0,0,0.75);
+}

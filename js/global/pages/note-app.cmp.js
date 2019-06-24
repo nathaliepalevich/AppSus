@@ -8,8 +8,8 @@ export default {
     template: `
         <main class="misskeep-app"> 
         <!-- <h1>{{filteredNotes}}</h1> -->
-        <note-generator></note-generator>
-        <note-list :notes="filteredNotes"></note-list>
+        <note-generator class="flex align-items justify-center"></note-generator>
+        <note-list :notes="filteredNotes" class="flex wrap justify-center"></note-list>
         </main>
     `,
     data() {

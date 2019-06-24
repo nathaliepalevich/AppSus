@@ -22,4 +22,7 @@ export default {
     mounted() {
         this.$refs.inputBox.focus()
     },
+    updated(){
+        console.log('SOMETHING HAPPEND IN NOTE-TXT')
+    }
 }

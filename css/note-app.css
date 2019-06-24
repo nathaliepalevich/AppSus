@@ -1,58 +1,97 @@
-.misskeep-app{
+.misskeep-app {
     background: rgb(231, 231, 231);
+    min-height: 90vh;
+    height: 100%;
+    padding: 1.5rem;
+    padding-top: 0.8rem;
+    padding-bottom: 3rem;
 }
 
 /* Note Generator component */
-.note-generator{
-    display: flex;
-    flex-direction: row;
-    padding: 1rem 0 0 0;
-    align-items: center;
-    justify-content: center;
+
+.note-generator {
+    padding: 0.5rem 0 0 0;
 }
 
-.note-generator input{
+.note-generator input {
     background: white;
     margin: 0;
-    padding: 0.75rem;
     width: 20rem;
-    height: 2rem;
-    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+    height: 2.85rem;
+    padding-left: 1rem;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
 }
 
-.note-generator button{
-    background: white;
-    padding: 0.65rem;
+.note-generator input:focus {
+    border: 3px solid rgb(127, 136, 155);
+}
+
+.note-generator .buttons {
+    background: rgba(255, 255, 255, 0.347);
+    padding-top: 2px;
+    padding-right: 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.note-generator button {
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
+    border-radius: 5px;
+    background: lightgrey;
+    padding: 0.5rem;
     font-size: 1rem;
     margin-left: 2px;
-    cursor: pointer;
 }
 
+/* Note Preview Component */
 
-
-.note-preview{
-    box-shadow: 0px 0px 15px 2px rgba(133,133,133,0.94);
+.note-preview {
+    box-shadow: 0px 0px 15px 2px rgba(133, 133, 133, 0.94);
+    border-radius: 10px;
     margin: 1rem;
     padding: 0.5rem;
-    width: 200px;
-    text-align: center;
-}
-.note-preview img {
-    width: 100px;
-    height: 100px;
+    min-width: 250px;
+    max-width: 250px
 }
 
-.note-preview li{
+.note-preview img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.note-preview p{
+    text-align: center;
+}
+
+.note-preview li {
     list-style-type: none;
 }
 
-.note-preview li button{
+.note-preview li button {
     color: red;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.note-preview .todo-done{
+.note-preview .todo-done {
     text-decoration: line-through;
+}
+
+/* Edit Note Componenet */
+
+.colorInput {
+    top: 2px;
+    width: 11rem;
+    height: 1.5rem;
+    position: relative;
+    right: 11px;
+}
+
+@media only screen and (max-width: 600px) {
+    .note-generator input {
+        width: 15rem;
+    }
 }

@@ -4,12 +4,12 @@ import noteEdit from './note-edit.cmp.js'
 export default {
     name: 'note-preview',
     template: `
-        <div class="note-preview" :style="{background: note.background}">
-            <p v-if="note.txt.length">{{note.txt}}</p>
-           <img v-else-if="note.img.length" :src=note.img title="Note Image"/>
-           <ul v-if="todos.length">
+        <div class="note-preview flex" :style="{background: note.background}">
+            <p class="flex full align-center" v-if="note.txt.length">{{note.txt}}</p>
+           <img class="flex full align-center" v-if="note.img.length" :src=note.img title="Note Image"/>
+           <ul class="flex flex-column full aligns-center" v-if="todos.length">
                <li v-for="(todo, idx) in todos" :key="todo.id" :todo="todo" @click="toggleTodo(idx)" :class="{'todo-done' : todo.isDone}">
-                   {{todo.txt}} <button @click.stop="deleteTodo(idx)"><i class="fas fa-times"></i></button>
+                 <button @click.stop="deleteTodo(idx)"><i class="fas fa-times"></i></button> {{todo.txt}}
                 </li>
            </ul>
            <note-edit :note="note"> </note-edit>

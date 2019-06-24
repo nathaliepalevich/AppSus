@@ -11,7 +11,7 @@ var app = new Vue({
     <div>
         <app-header></app-header>
         <router-view></router-view>
-        <footer>All Beers Reserved => Nathalie & Michael 2019</footer>
+        <footer>All Rights Reserved => Nathalie & Michael 2019</footer>
     </div>
     `,
     components: {
