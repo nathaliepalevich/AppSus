@@ -67,6 +67,7 @@ button {
     background: #f9f9f9;
     border-bottom: 2px solid #838e80;
 }
+
 .main-logo {
     font-family: LogoFont;
 }
@@ -76,7 +77,7 @@ button {
     margin-left: 1.875rem;
 }
 
-.app-logo{
+.app-logo {
     font-family: LogoFont;
     letter-spacing: 2.2px;
     word-spacing: 4.2px;
@@ -137,5 +138,5 @@ footer {
     color: white;
     left: 0;
     font-weight: bold;
-    box-shadow: -2px -2px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.75);
 }
