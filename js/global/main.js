@@ -22,5 +22,4 @@ var app = new Vue({
         
     },
     router: mainRouter
-    
 })

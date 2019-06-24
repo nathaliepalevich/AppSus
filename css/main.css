@@ -41,6 +41,10 @@ button {
     flex: 1;
 }
 
+.justify-end {
+    justify-content: flex-end;
+}
+
 .wrap {
     flex-wrap: wrap
 }
@@ -98,6 +102,16 @@ button {
     padding-left: 1.5rem;
 }
 
+.main-navbar-desktop {
+    display: flex;
+    align-items: flex-end;
+    padding-right: 1rem;
+}
+
+.main-navbar-mobile {
+    display: none;
+}
+
 .main-navbar a {
     text-decoration: none;
     font-weight: bold;
@@ -139,4 +153,19 @@ footer {
     left: 0;
     font-weight: bold;
     box-shadow: -2px -2px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 950px) {
+    .main-navbar-desktop{
+        display: none;
+    }
+    .main-navbar-mobile {
+        display: block;
+        padding-right: 20px;
+        cursor: pointer;
+
+    }
+    .navbar-hamburger{
+        font-size: 2rem;
+    }
 }
